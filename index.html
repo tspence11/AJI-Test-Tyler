@@ -83,7 +83,21 @@
     /* Profile */
     .profile {
       padding: 64px 0 72px;
-      max-width: 820px;
+      max-width: 980px;
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+    }
+    .headshot {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    @media (max-width: 600px) {
+      .profile { flex-direction: column; gap: 20px; padding-top: 40px; }
+      .headshot { width: 104px; height: 104px; }
     }
     h1 {
       font-weight: 900;
@@ -176,6 +190,8 @@
 
   <main>
     <section class="profile" id="about">
+      <img class="headshot" src="images/headshot.jpg" alt="Headshot of Tyler Spence">
+      <div>
       <h1>Tyler Spence</h1>
       <p class="beat">Reporting Fellow &middot; Agriculture Policy &amp; the USDA</p>
       <div class="about">
@@ -183,6 +199,7 @@
         <p>He previously reported for the Indianapolis Star, The Arnolt Center for Investigative Journalism and the Herald-Dispatch in his home state of West Virginia.</p>
       </div>
       <p class="contact"><strong>Contact:</strong> You can reach me at <a href="mailto:tylerspence@washsun.com">tylerspence@washsun.com</a>.</p>
+      </div>
     </section>
 
     <section id="clips">
