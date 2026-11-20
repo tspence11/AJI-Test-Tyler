@@ -5,115 +5,148 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tyler Spence</title>
   <meta name="description" content="Tyler Spence, reporting fellow covering agriculture policy and the USDA.">
+  <meta name="theme-color" content="#2a1250">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #ffffff;
-      --text: #111111;
-      --muted: #555555;
-      --rule: #111111;
-      --rule-light: #dddddd;
-      --label-bg: #111111;
-      --label-text: #ffffff;
-      --accent: #fdd230;
-      --accent-text: #111111;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #121212;
-        --text: #f2f2f2;
-        --muted: #b0b0b0;
-        --rule: #f2f2f2;
-        --rule-light: #333333;
-        --label-bg: #f2f2f2;
-        --label-text: #121212;
-      }
+      color-scheme: dark;
+      --sky-top: #160b33;
+      --sky-mid: #4b1d78;
+      --sky-pink: #c2378f;
+      --sky-low: #f2875a;
+      --panel: rgba(22, 10, 46, 0.78);
+      --panel-border: rgba(255, 255, 255, 0.12);
+      --text: #fbf3ff;
+      --muted: #d9c6ea;
+      --pink: #ff4fa3;
+      --orange: #ff9a52;
+      --yellow: #ffd76a;
+      --purple: #8a4dff;
+      --display: "Baloo 2", "Arial Rounded MT Bold", system-ui, sans-serif;
     }
     * { box-sizing: border-box; }
+    html { background: var(--sky-top); }
     body {
       margin: 0;
-      background: var(--bg);
+      min-height: 100vh;
       color: var(--text);
       font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
       font-size: 18px;
       line-height: 1.6;
+      position: relative;
+    }
+    /* Sunset sky, fixed behind the page */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(circle at 78% 82%, rgba(255, 200, 120, 0.55) 0, rgba(255, 140, 90, 0.25) 14%, transparent 32%),
+        linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 38%, var(--sky-pink) 72%, var(--sky-low) 100%);
     }
     a { color: inherit; }
 
     /* Top bar */
     .topbar {
-      border-bottom: 2px solid var(--rule);
+      background: rgba(16, 7, 36, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--panel-border);
     }
     .topbar-inner {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 14px 16px;
+      padding: 12px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
     }
     .wordmark {
-      font-weight: 900;
-      font-size: 1.6rem;
-      letter-spacing: -0.03em;
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 1.7rem;
+      line-height: 1;
+      text-transform: lowercase;
       text-decoration: none;
+      color: var(--text);
     }
     .pill {
       display: inline-block;
-      background: var(--accent);
-      color: var(--accent-text);
-      font-weight: 700;
+      background: linear-gradient(90deg, var(--pink), var(--orange));
+      color: #1a0b2e;
+      font-weight: 800;
       font-size: 0.95rem;
       text-decoration: none;
       padding: 10px 22px;
       border-radius: 999px;
       white-space: nowrap;
+      box-shadow: 0 4px 18px rgba(255, 79, 163, 0.45);
     }
-    .pill:hover { filter: brightness(0.95); }
+    .pill:hover { filter: brightness(1.08); }
 
     main {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 0 16px 96px;
+      padding: 48px 16px 96px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-radius: 24px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
     }
 
     /* Profile */
     .profile {
-      padding: 64px 0 72px;
-      max-width: 980px;
+      padding: 40px;
+      margin-bottom: 48px;
       display: flex;
-      gap: 32px;
+      gap: 36px;
       align-items: flex-start;
     }
     .headshot {
-      width: 128px;
-      height: 128px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       object-fit: cover;
       flex-shrink: 0;
-    }
-    @media (max-width: 600px) {
-      .profile { flex-direction: column; gap: 20px; padding-top: 40px; }
-      .headshot { width: 104px; height: 104px; }
+      padding: 5px;
+      background: linear-gradient(135deg, var(--yellow), var(--pink), var(--purple));
     }
     h1 {
-      font-weight: 900;
-      font-size: clamp(2.8rem, 9vw, 4.5rem);
-      line-height: 1;
-      letter-spacing: -0.035em;
-      margin: 0 0 16px;
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: clamp(3.2rem, 11vw, 6rem);
+      line-height: 0.9;
+      letter-spacing: -0.01em;
+      text-transform: lowercase;
+      margin: 0 0 18px;
+      background: linear-gradient(180deg, var(--yellow) 0%, var(--orange) 45%, var(--pink) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 4px 0 #1a0b2e) drop-shadow(0 8px 20px rgba(255, 79, 163, 0.35));
+      padding-bottom: 0.08em;
     }
     .beat {
-      font-weight: 700;
-      font-size: 1.05rem;
+      display: inline-block;
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--yellow);
       margin: 0 0 24px;
     }
     .about p {
-      margin: 0 0 20px;
+      margin: 0 0 18px;
       line-height: 1.75;
+      max-width: 68ch;
     }
     .contact {
       font-size: 0.95rem;
@@ -121,62 +154,70 @@
       margin: 8px 0 0;
     }
     .contact strong { color: var(--text); }
+    .contact a { color: var(--yellow); }
+
+    @media (max-width: 640px) {
+      main { padding-top: 28px; }
+      .profile { flex-direction: column; gap: 20px; padding: 28px 20px; }
+      .headshot { width: 112px; height: 112px; }
+    }
 
     /* Section labels */
-    .section-label {
-      border-bottom: 2px solid var(--rule);
-      margin: 0 0 24px;
-    }
+    .section-label { margin: 0 0 20px; }
     .section-label h2 {
       display: inline-block;
       margin: 0;
-      background: var(--label-bg);
-      color: var(--label-text);
-      font-size: 0.85rem;
+      font-family: var(--display);
       font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 6px 12px;
+      font-size: 2.4rem;
+      line-height: 1;
+      text-transform: lowercase;
+      color: var(--text);
+      text-shadow: 0 3px 0 #1a0b2e;
     }
 
     /* Clips */
-    .clips { list-style: none; padding: 0; margin: 0; }
+    .clips { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
     .clip {
       display: flex;
       justify-content: space-between;
       gap: 24px;
-      padding: 0 0 24px;
-      margin: 0 0 24px;
-      border-bottom: 1px solid var(--rule-light);
+      padding: 24px 28px;
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-left: 6px solid var(--pink);
+      border-radius: 18px;
+      transition: transform 0.15s ease, border-color 0.15s ease;
     }
+    .clip:hover { transform: translateY(-2px); border-left-color: var(--orange); }
     .clip h3 {
-      font-size: clamp(1.3rem, 3.5vw, 1.9rem);
+      font-size: clamp(1.25rem, 3.4vw, 1.75rem);
       font-weight: 800;
-      line-height: 1.2;
-      letter-spacing: -0.015em;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
       margin: 0 0 8px;
     }
     .clip h3 a { text-decoration: none; }
-    .clip h3 a:hover { text-decoration: underline; }
+    .clip h3 a:hover { color: var(--yellow); }
     .clip .meta { font-size: 0.9rem; color: var(--muted); margin: 0; }
     .clip img {
       width: 38%;
       max-width: 420px;
       aspect-ratio: 3 / 2;
       object-fit: cover;
+      border-radius: 12px;
       flex-shrink: 0;
     }
-    @media (max-width: 600px) {
-      .clip { flex-direction: column-reverse; }
+    @media (max-width: 640px) {
+      .clip { flex-direction: column-reverse; padding: 20px; }
       .clip img { width: 100%; max-width: none; }
     }
 
     footer {
-      border-top: 2px solid var(--rule);
       margin-top: 64px;
-      padding-top: 20px;
       font-size: 0.9rem;
-      color: var(--muted);
+      color: var(--text);
+      opacity: 0.85;
     }
   </style>
 </head>
@@ -189,7 +230,7 @@
   </div>
 
   <main>
-    <section class="profile" id="about">
+    <section class="profile panel" id="about">
       <img class="headshot" src="images/headshot.jpg" alt="Headshot of Tyler Spence">
       <div>
       <h1>Tyler Spence</h1>
