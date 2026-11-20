@@ -127,11 +127,12 @@
       letter-spacing: -0.01em;
       text-transform: lowercase;
       margin: 0 0 18px;
-      background: linear-gradient(180deg, var(--yellow) 0%, var(--orange) 45%, var(--pink) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      filter: drop-shadow(0 4px 0 #1a0b2e) drop-shadow(0 8px 20px rgba(255, 79, 163, 0.35));
+      color: #ffffff;
+      -webkit-text-stroke: 0.09em #1a0b2e;
+      paint-order: stroke fill;
+      text-shadow:
+        0 0.07em 0 #1a0b2e,
+        0 0.1em 24px rgba(255, 79, 163, 0.45);
       padding-bottom: 0.08em;
     }
     .beat {
