@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tyler Spence</title>
+  <meta name="description" content="Tyler Spence, reporting fellow covering agriculture policy and the USDA.">
+  <style>
+    :root {
+      --bg: #fbfaf7;
+      --text: #1f2421;
+      --muted: #5c6660;
+      --accent: #3f6b3a;
+      --rule: #e2ded4;
+      --placeholder-bg: #f3f0e8;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161a17;
+        --text: #e8e6e0;
+        --muted: #a3aaa4;
+        --accent: #8fbf86;
+        --rule: #2e3530;
+        --placeholder-bg: #1f2420;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 72px 20px 96px;
+    }
+    header { margin-bottom: 56px; }
+    h1 {
+      font-size: clamp(2.4rem, 7vw, 3.4rem);
+      line-height: 1.1;
+      margin: 0 0 12px;
+      letter-spacing: -0.01em;
+    }
+    .beat {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin: 0;
+    }
+    section {
+      border-top: 1px solid var(--rule);
+      padding-top: 28px;
+      margin-bottom: 48px;
+    }
+    h2 {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin: 0 0 16px;
+    }
+    .placeholder {
+      background: var(--placeholder-bg);
+      border: 2px dashed var(--rule);
+      border-radius: 6px;
+      padding: 20px;
+      color: var(--muted);
+      font-style: italic;
+      margin: 0;
+    }
+    .clips { list-style: none; padding: 0; margin: 0; }
+    .clips li { margin-bottom: 20px; }
+    a { color: var(--accent); }
+    footer {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 0.95rem;
+      color: var(--muted);
+      border-top: 1px solid var(--rule);
+      padding-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Tyler Spence</h1>
+      <p class="beat">Reporting Fellow &middot; Agriculture Policy &amp; the USDA</p>
+    </header>
+
+    <section id="about">
+      <h2>About</h2>
+      <!-- TODO: Replace the placeholder paragraph below with About text. -->
+      <p class="placeholder">[About section — text coming soon]</p>
+    </section>
+
+    <section id="clips">
+      <h2>Clips</h2>
+      <!--
+        TODO: Add stories here. Copy this pattern for each clip:
+        <li>
+          <a href="STORY_URL">Story headline</a><br>
+          <small>Publication &middot; Month Day, Year</small>
+        </li>
+      -->
+      <ul class="clips">
+      </ul>
+    </section>
+
+    <footer>
+      <p>You can reach me at <a href="mailto:tylerspence@washsun.com">tylerspence@washsun.com</a>.</p>
+    </footer>
+  </main>
+</body>
+</html>
